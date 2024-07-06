@@ -39,3 +39,31 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Modal Box
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButtons = document.querySelectorAll('.item-detail-button');
+
+itemDetailButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    itemDetailModal.style.display = 'flex';
+    e.preventDefault();
+  })
+});
+
+// itemDetailButtons.addEventListener('click', (e) => {
+//   itemDetailModal.style.display = 'flex';
+//   e.preventDefault();
+// });
+
+// Klik tombol close modal
+document.querySelector('.modal .close-icon').addEventListener('click', (e) => {
+  itemDetailModal.style.display = 'none';
+  e.preventDefault();
+});
+
+// Klik diluar modal 
+window.addEventListener('click', (e) => {
+  if (e.target === itemDetailModal) {
+    itemDetailModal.style.display = 'none';
+  }
+})
